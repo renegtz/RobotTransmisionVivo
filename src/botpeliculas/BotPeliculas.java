@@ -22,6 +22,9 @@ public class BotPeliculas {
     /**
      * @param args the command line arguments
      */
+   public static int aleatorio=0;
+   public static int tamañotiempo[] = {125, 94, 91, 175, 120, 92, 113, 92, 93, 92, 105, 127, 103, 104, 108, 98, 126, 131, 88, 105, 107, 101, 107, 101, 137, 93};
+
     public static void main(String[] args) throws AWTException {
         BotPeliculas var1 = new BotPeliculas();
         robot = new Robot();
@@ -95,7 +98,7 @@ public class BotPeliculas {
 //                robot.delay(60000);
 //            robot.delay(17200);
                 minutos = minutos + 1;
-                if (minutos >= 0) {
+                if (minutos >= tamañotiempo[(aleatorio-1)] ) {
                     paso = true;
 
                 }
@@ -188,7 +191,7 @@ public class BotPeliculas {
     public void abrirPelicula() {
         robot.delay(4000);
         Random Random = new Random();
-        int aleatorio = (int) (Random.nextDouble() * 11 + 1);
+        aleatorio = (int) (Random.nextDouble() * 26 + 1);
 //        Random Random = new Random();
         int espacio = 25;
         robot.mouseMove(282, (129 + (espacio * (aleatorio - 1))));
